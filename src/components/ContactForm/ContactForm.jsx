@@ -10,8 +10,8 @@ import { nanoid } from 'nanoid';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operations';
-import { getContacts } from 'redux/selectors';
+import { addContact } from 'redux/contacts/operations';
+import { getContacts } from 'redux/contacts/selectors';
 
 const ContactForm = () => {
   const nameID = nanoid();
@@ -52,7 +52,7 @@ const ContactForm = () => {
       alert(`${name} is already in contacts.`);
       return;
     }
-    dispatch(addContact({name, number}));
+    dispatch(addContact({ name, number }));
     actions.resetForm();
   };
   return (
