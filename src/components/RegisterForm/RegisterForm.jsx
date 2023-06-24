@@ -36,7 +36,7 @@ const RegisterForm = () => {
     email: yup.string().email('Invalid email address').required('Required'),
     password: yup
       .string()
-      .min(4, 'Must be at least 4 characters')
+      .min(7, 'Must be at least 7 characters')
       .required('Field is required'),
   });
 

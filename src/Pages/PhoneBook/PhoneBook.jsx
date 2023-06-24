@@ -6,14 +6,21 @@ import {
   PhonebookTitle,
   PhonebookSubTitle,
 } from '../../components/App.styled';
+import { fetchContacts } from 'redux/contacts/operations';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import { getContacts, getError, getIsLoading } from 'redux/contacts/selectors';
 
 const PhoneBook = () => {
   const contacts = useSelector(getContacts);
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
   return (
     <Phonebook>
       <PhonebookTitle>PhoneBook</PhonebookTitle>

@@ -3,14 +3,13 @@ import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   margin: 0 auto;
-  /* margin-left: 80px; */
   padding: 0 15px 0 15px;
   width: 1200px;
 
-  /* @media screen and (min-width: 768px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     width: 768px;
-  } */
-  outline: 1px solid red;
+  }
+  /* outline: 1px solid red; */
 `;
 
 export const Header = styled.header`
@@ -53,4 +52,3 @@ export const HeaderNavLink = styled(NavLink)`
     }
   }
 `;
-

@@ -3,10 +3,8 @@ import { useDispatch } from 'react-redux';
 import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import * as yup from 'yup';
-import { Navigate } from 'react-router-dom';
 
 import { loginUser } from 'redux/auth/operationsWithUser';
-import { useAuth } from 'components/Hooks/useAuth';
 
 import {
   FormInput,
@@ -21,7 +19,6 @@ const LoginForm = () => {
   const passwordID = nanoid();
   const dispatch = useDispatch();
 
-  const { isLoggedIn } = useAuth();
   const initialValues = {
     email: '',
     password: '',
@@ -35,37 +32,41 @@ const LoginForm = () => {
     password: yup.string().required('Field is required'),
   });
 
+  console.log(loginUser.error);
+
   const handlerFormSubmit = ({ email, password }, actions) => {
-    dispatch(loginUser({ email, password }));
+    dispatch(loginUser({ email, password })).then(res => {
+      console.log(res);
+    });
     actions.resetForm();
   };
-    return (
-      <>
-        {isLoggedIn && <Navigate to="/phonebook" replace={true} />}
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={handlerFormSubmit}
-        >
-          <FormContact autoComplete="on">
-            <FormInputLabel htmlFor={emailID}>Email</FormInputLabel>
-            <FormInput type="email" name="email" id={emailID} />
-            <ErrMessage name="email" component="div" />
+  return (
+    <>
+      {/* {isLoggedIn && <Navigate to="/phonebook" replace={true} />} */}
+      <Formik
+        initialValues={initialValues}
+        validationSchema={validationSchema}
+        onSubmit={handlerFormSubmit}
+      >
+        <FormContact autoComplete="on">
+          <FormInputLabel htmlFor={emailID}>Email</FormInputLabel>
+          <FormInput type="email" name="email" id={emailID} />
+          <ErrMessage name="email" component="div" />
 
-            <FormInputLabel htmlFor={passwordID}>Password</FormInputLabel>
-            <FormInput
-              type="password"
-              name="password"
-              id={passwordID}
-              autoComplete="false"
-            />
-            <ErrMessage name="password" component="div" />
+          <FormInputLabel htmlFor={passwordID}>Password</FormInputLabel>
+          <FormInput
+            type="password"
+            name="password"
+            id={passwordID}
+            autoComplete="false"
+          />
+          <ErrMessage name="password" component="div" />
 
-            <SubmitButton type="submit">Log in</SubmitButton>
-          </FormContact>
-        </Formik>
-      </>
-    );
+          <SubmitButton type="submit">Log in</SubmitButton>
+        </FormContact>
+      </Formik>
+    </>
+  );
 };
 
 LoginForm.propTypes = {

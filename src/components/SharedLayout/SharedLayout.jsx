@@ -8,8 +8,7 @@ import {
   HeaderNavItem,
   HeaderNavLink,
 } from './SharedLayout.styled';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 import { Suspense } from 'react';
 import { Loader } from 'components/Loader/Loader';
 import { selectIsLoggedIn } from 'redux/auth/userSelectors';
@@ -51,7 +50,6 @@ const SharedLayot = () => {
           <Outlet />
         </Suspense>
       </main>
-      <ToastContainer></ToastContainer>
     </Container>
   );
 };
