@@ -5,10 +5,11 @@ import {
   logoutUser,
   refreshUser,
   signupUser,
+  updateAvatar,
 } from './operationsWithUser';
 
 const initialState = {
-  user: { name: null, email: null },
+  user: { name: null, email: null, avatar: '' },
   token: null,
   isLoggedIn: false,
   isRefreshing: false,
@@ -43,6 +44,10 @@ const authSlice = createSlice({
       state.user = { name: null, email: null };
       state.token = null;
       state.isLoggedIn = false;
+    },
+
+    [updateAvatar.fulfilled](state, action) {
+      state.user.avatar = action.payload.avatarURL;
     },
   },
 });

@@ -1,5 +1,5 @@
 import { lazy, useEffect } from 'react';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 
 import { refreshUser } from 'redux/auth/operationsWithUser';
@@ -13,6 +13,8 @@ const Home = lazy(() => import('../Pages/Home/Home'));
 const PhoneBook = lazy(() => import('../Pages/PhoneBook/PhoneBook'));
 const Register = lazy(() => import('../Pages/Register/Register'));
 const Login = lazy(() => import('../Pages/Login/Login'));
+const Profile = lazy(() => import('../Pages/Profile/Profile'));
+const UpdateAvatar = lazy(() => import('../Pages/UpdateAvatar/UpdateAvatar'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -43,6 +45,17 @@ export const App = () => {
           path="phonebook"
           element={
             <PrivateRoute redirectTo="/login" component={<PhoneBook />} />
+          }
+        ></Route>
+
+        <Route
+          path="profile"
+          element={<PrivateRoute redirectTo="/login" component={<Profile />} />}
+        ></Route>
+        <Route
+          path="profile/update"
+          element={
+            <PrivateRoute redirectTo="/login" component={<UpdateAvatar />} />
           }
         ></Route>
       </Route>

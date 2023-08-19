@@ -8,6 +8,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from 'redux/auth/operationsWithUser';
 import { selectIsLoggedIn, selectUser } from 'redux/auth/userSelectors';
+import { Link } from 'react-router-dom';
 
 const UserMenu = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -21,6 +22,7 @@ const UserMenu = () => {
         <Container>
           <TextWelcome>
             Welcome, <TextNickName>{user.name}</TextNickName>
+            <Link to={'/profile'}>Profile</Link>
           </TextWelcome>
 
           <ExitButton
