@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { updateAvatar } from 'redux/auth/operationsWithUser';
 
 const UpdateAvatar = () => {

@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoggedIn, selectUser } from 'redux/auth/userSelectors';
+import { useSelector } from 'react-redux';
+import { selectUser } from 'redux/auth/userSelectors';
 import { Link } from 'react-router-dom';
 const Profile = () => {
   const user = useSelector(selectUser);
