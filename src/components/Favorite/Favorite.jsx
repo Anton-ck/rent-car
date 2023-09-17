@@ -26,6 +26,8 @@ const FavoritesCar = () => {
 
   return (
     <CarsListWrapper>
+
+
       <CarsList>
         {paginatedCars.map(car => (
           <CarsListItem key={car.id}>

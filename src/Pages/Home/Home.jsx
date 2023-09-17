@@ -1,4 +1,4 @@
-import { HomeContainer, HomeText } from './Home.styled';
+import { HomeContainer } from './Home.styled';
 
 const Home = () => {
   return (

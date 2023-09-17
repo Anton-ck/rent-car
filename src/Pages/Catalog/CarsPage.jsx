@@ -1,17 +1,11 @@
 import CarsCatalog from 'components/CarsList/CarsList';
-import FilterName from 'components/Filter/Filter';
 
 import { fetchCars } from 'redux/cars/carsOperations';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
-import { getCars, getError, getIsLoading } from 'redux/cars/carsSelectors';
-
 const CarsPage = () => {
-  // const contacts = useSelector(getContacts);
-  // const isLoading = useSelector(getIsLoading);
-  // const error = useSelector(getError);
   const dispatch = useDispatch();
 
   useEffect(() => {
