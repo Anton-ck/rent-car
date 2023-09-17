@@ -8,7 +8,6 @@ export const CardWrapper = styled.div`
   padding: 0px 0px 0px 0;
   display: flex;
   flex-direction: column;
-  /* outline: 1px green solid; */
 `;
 
 export const ImgWrapper = styled.div`

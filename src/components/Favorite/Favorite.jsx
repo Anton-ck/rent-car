@@ -26,8 +26,6 @@ const FavoritesCar = () => {
 
   return (
     <CarsListWrapper>
-
-
       <CarsList>
         {paginatedCars.map(car => (
           <CarsListItem key={car.id}>
@@ -35,7 +33,11 @@ const FavoritesCar = () => {
           </CarsListItem>
         ))}
       </CarsList>
-      {totalPages !== page && <LoadMoreBtn getPage={getPage} />}
+      {favoriteCars.length === 0 ? (
+        <p>No content</p>
+      ) : (
+        totalPages !== page && <LoadMoreBtn getPage={getPage} />
+      )}
     </CarsListWrapper>
   );
 };

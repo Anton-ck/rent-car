@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/macro';
 import { VscChromeClose } from 'react-icons/vsc';
 
 export const Backdrop = styled.div`
@@ -11,6 +11,7 @@ export const Backdrop = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10000;
 `;
 
 export const ModalContainer = styled.div`
@@ -22,7 +23,6 @@ export const ModalContainer = styled.div`
   transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 24px;
-  z-index: 100;
   max-height: 80vh;
 
   border-radius: 24px;
@@ -116,27 +116,30 @@ export const ModelBlue = styled.div`
   font-size: 16px;
 `;
 
-export const SecondaryInfo = styled.div`
+export const SecondaryInfo = styled.ul`
   display: flex;
-  width: 300px;
   flex-wrap: wrap;
-  align-items: center;
-  color: rgba(18, 20, 23, 0.5);
 
+  color: rgba(18, 20, 23, 0.5);
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
-  gap: 3px;
-  margin-bottom: 14px;
+
+  gap: 4px;
+  &:last-child {
+    margin-top: 4px;
+  }
 `;
 
-export const SecondaryCarText = styled.div`
+export const SecondaryCarAbout = styled.li`
   color: rgba(18, 20, 23, 0.5);
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
-  border-right: 1px solid rgba(18, 20, 23, 0.2);
   padding-right: 3px;
+  &:not(:last-child) {
+    border-right: 1px solid rgba(18, 20, 23, 0.2);
+  }
 `;
 
 export const Descriprion = styled.p`
@@ -145,6 +148,7 @@ export const Descriprion = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+  margin-top: 14px;
 `;
 
 export const Accessories = styled.div`
@@ -202,7 +206,6 @@ export const RentalInfo = styled.ul`
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 30px;
-
 `;
 
 export const RentalItem = styled.li`

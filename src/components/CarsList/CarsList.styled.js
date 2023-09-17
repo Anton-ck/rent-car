@@ -16,8 +16,6 @@ export const CarsList = styled.ul`
   margin-top: 50px;
   gap: 30px;
   justify-content: center;
-
-  /* outline: 1px solid red; */
 `;
 
 export const CarsListItem = styled.li``;

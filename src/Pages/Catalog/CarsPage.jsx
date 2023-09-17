@@ -5,41 +5,17 @@ import { fetchCars } from 'redux/cars/carsOperations';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
+import { getIsLoading } from 'redux/cars/carsSelectors';
+
+import { Loader } from 'components/Loader/Loader';
+
 const CarsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchCars());
   }, [dispatch]);
-  return (
-    <>
-      <CarsCatalog />
-      {/* {contacts.length === 0 && !error && !isLoading && (
-        <b style={{ display: 'flex', justifyContent: 'center', color: 'red' }}>
-          You don't have any contact yet
-        </b>
-      )}
-      {contacts.length !== 0 && <FilterName />}
-
-      {isLoading && !error && (
-        <b style={{ display: 'flex', justifyContent: 'center' }}>
-          Request in progress...
-        </b>
-      )} */}
-
-      {/* {error && (
-        <span
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            fontStyle: 'italic',
-          }}
-        >
-          Oops, something went wrong. Please try again!
-        </span>
-      )} */}
-    </>
-  );
+  return <>{!getIsLoading ? <Loader /> : <CarsCatalog />}</>;
 };
 
 export default CarsPage;

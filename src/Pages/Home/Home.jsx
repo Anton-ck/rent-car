@@ -1,9 +1,12 @@
-import { HomeContainer } from './Home.styled';
+import { HomeContainer, HomeText } from './Home.styled';
 
 const Home = () => {
   return (
     <HomeContainer>
-      {/* <HomeText>Welcome to your personal magic PhoneBook 🧙🏻</HomeText> */}
+      <HomeText>
+        "Sitting here, fooling around, smoking marijuana, eating chips and
+        masturbating is not a life plan, Jesse.©"
+      </HomeText>
     </HomeContainer>
   );
 };

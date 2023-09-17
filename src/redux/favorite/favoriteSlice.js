@@ -13,7 +13,6 @@ const favoritesSlice = createSlice({
       state.cars.push(action.payload);
     },
     decrementToFavoriteList(state, action) {
-      //   return (state = state.filter(car => car !== action.payload));
       state.cars = state.cars.filter(car => car !== action.payload);
     },
   },

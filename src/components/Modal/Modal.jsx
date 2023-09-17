@@ -11,7 +11,7 @@ import {
   CarText,
   ModelBlue,
   SecondaryInfo,
-  SecondaryCarText,
+  SecondaryCarAbout,
   ContentWrapper,
   Accessories,
   AccessoriesTitle,
@@ -89,15 +89,17 @@ const Modal = ({
               </CarInfo>
             </MainInfo>
             <SecondaryInfo>
-              <SecondaryCarText>{city}</SecondaryCarText>
-              <SecondaryCarText>{country}</SecondaryCarText>
-              <SecondaryCarText>id: {id}</SecondaryCarText>
-              <SecondaryCarText>Year: {year}</SecondaryCarText>
-              <SecondaryCarText>Type: {type}</SecondaryCarText>
-              <SecondaryCarText>
+              <SecondaryCarAbout>{city}</SecondaryCarAbout>
+              <SecondaryCarAbout>{country}</SecondaryCarAbout>
+              <SecondaryCarAbout>id: {id}</SecondaryCarAbout>
+              <SecondaryCarAbout>Year: {year}</SecondaryCarAbout>
+              <SecondaryCarAbout>Type: {type}</SecondaryCarAbout>
+            </SecondaryInfo>
+            <SecondaryInfo>
+              <SecondaryCarAbout>
                 Fuel Consumption: {fuelConsumption}
-              </SecondaryCarText>
-              <SecondaryCarText>Engine Size: {engineSize}</SecondaryCarText>
+              </SecondaryCarAbout>
+              <SecondaryCarAbout>Engine Size: {engineSize}</SecondaryCarAbout>
             </SecondaryInfo>
             <Descriprion>{description}</Descriprion>
             <Accessories>

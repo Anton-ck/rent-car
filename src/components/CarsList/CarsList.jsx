@@ -20,14 +20,17 @@ const CarsCatalog = () => {
 
   return (
     <CarsListWrapper>
-      <CarsList>
-        {paginatedCars.map(car => (
-          <CarsListItem key={car.id}>
-            <CarCard {...car} />
-          </CarsListItem>
-        ))}
-      </CarsList>
-
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <CarsList>
+          {paginatedCars.map(car => (
+            <CarsListItem key={car.id}>
+              <CarCard {...car} />
+            </CarsListItem>
+          ))}
+        </CarsList>
+      )}
       {!isLoading ? (
         totalPages !== page && <LoadMoreBtn getPage={getPage} />
       ) : (
