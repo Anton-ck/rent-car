@@ -1,21 +1,22 @@
 import styled from '@emotion/styled';
 import { NavLink } from 'react-router-dom';
+import { sizes } from 'styles/sharedStyles';
 
 export const Container = styled.div`
-  margin: 0 auto;
+  /* margin: 0 auto;
   padding: 0 15px 0 15px;
-  width: 1200px;
+  width: 1440px;
 
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    width: 768px;
-  }
-  /* outline: 1px solid red; */
+
+  outline: 1px solid red; */
 `;
 
 export const Header = styled.header`
   padding: 0 25px 0 5px;
-  min-height: 60px;
-  margin-bottom: 15px;
+  height: ${sizes.header.height};
+  margin: 0 auto;
+  max-width: ${sizes.container.width};
+  /* outline: 1px solid red; */
 `;
 export const Nav = styled.nav`
   display: flex;

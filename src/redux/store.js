@@ -11,20 +11,20 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { contactsReducer } from './contacts/contactsSlice';
-import { filterReducer } from './contacts/filterSlice';
-import { authReducer } from './auth/userSlice';
+import { carsReducer } from './cars/carsSlice';
+import { favoritesReducer } from './favorite/favoriteSlice';
 
 const persistConfig = {
-  key: 'auth',
+  key: 'favoritesCar',
   storage,
-  whitelist: ['token'],
+  // whitelist: ['token'],
 };
 
 const rootReducer = combineReducers({
-  auth: persistReducer(persistConfig, authReducer),
-  contacts: contactsReducer,
-  filter: filterReducer,
+  cars: carsReducer,
+  favorites: persistReducer(persistConfig, favoritesReducer),
+
+  // filter: filterReducer,
 });
 
 export const store = configureStore({
