@@ -34,7 +34,15 @@ const FavoritesCar = () => {
         ))}
       </CarsList>
       {favoriteCars.length === 0 ? (
-        <p>No content</p>
+        <p
+          style={{
+            alignSelf: 'center',
+            marginTop: 100,
+            fontSize: 26,
+          }}
+        >
+          There is no cars in your favorite list yet
+        </p>
       ) : (
         totalPages !== page && <LoadMoreBtn getPage={getPage} />
       )}
