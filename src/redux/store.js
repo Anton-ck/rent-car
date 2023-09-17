@@ -17,14 +17,12 @@ import { favoritesReducer } from './favorite/favoriteSlice';
 const persistConfig = {
   key: 'favoritesCar',
   storage,
-  // whitelist: ['token'],
+  whitelist: ['cars'],
 };
 
 const rootReducer = combineReducers({
   cars: carsReducer,
   favorites: persistReducer(persistConfig, favoritesReducer),
-
-  // filter: filterReducer,
 });
 
 export const store = configureStore({
